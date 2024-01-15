@@ -1,0 +1,7 @@
+﻿  Final project complete setup.cpp
+D:\programming\SE PF Semester 1 Data\Final project complete setup\Final project complete setup.cpp(423,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\programming\SE PF Semester 1 Data\Final project complete setup\Final project complete setup.cpp(740,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\programming\SE PF Semester 1 Data\Final project complete setup\Final project complete setup.cpp(1258,6): warning C4101: 'costumerNumber': unreferenced local variable
+D:\programming\SE PF Semester 1 Data\Final project complete setup\Final project complete setup.cpp(690,1): warning C4715: 'deleteCarData': not all control paths return a value
+D:\programming\SE PF Semester 1 Data\Final project complete setup\Final project complete setup.cpp(900,1): warning C4715: 'deleteCostumerData': not all control paths return a value
+  Final project complete setup.vcxproj -> D:\programming\SE PF Semester 1 Data\Final project complete setup\x64\Debug\Final project complete setup.exe

@@ -1,0 +1,440 @@
+
+
+# Car Rental System Documentation
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Structures](#structures)
+   - [Admin Data Structure](#admin-data-structure)
+   - [Car Data Structure](#car-data-structure)
+   - [Customer Data Structure](#customer-data-structure)
+   - [Rental Report Structure](#rental-report-structure)
+   - [Customer Report Structure](#customer-report-structure)
+3. [Data Reading Section](#data-reading-section)
+   - [Number of Customers](#number-of-customers)
+   - [Number of Cars](#number-of-cars)
+   - [Car Data Pointer](#car-data-pointer)
+   - [Customer Data Pointer](#customer-data-pointer)
+4. [Exit Function](#exit-function)
+5. [Admin Section](#admin-section)
+   - [Admin Side Function](#admin-side-function)
+   - [Admin Options Function](#admin-options-function)
+6. [Car Section](#car-section)
+   - [Add Car Function](#add-car-function)
+   - [View Cars Function](#view-cars-function)
+   - [Search Car Data Function](#search-car-data-function)
+   - [Update Car Data Function](#update-car-data-function)
+   - [Delete Car Data Function](#delete-car-data-function)
+   - [Print Car Function](#print-car-function)
+7. [Customer Section](#customer-section)
+   - [Customer Side Function](#customer-side-function)
+   - [Customer Options Function](#customer-options-function)
+   - [Add Customer Function](#add-customer-function)
+   - [View Customer Function](#view-customer-function)
+   - [Print Customer Function](#print-customer-function)
+   - [Update Customer Data Function](#update-customer-data-function)
+   - [Delete Customer Data Function](#delete-customer-data-function)
+   - [Search Customer Function](#search-customer-function)
+   - [Change Admin Password Function](#change-admin-password-function)
+8. [Print Report Section](#print-report-section)
+   - [Print Rental Report Function](#print-rental-report-function)
+   - [Print Car Report Function](#print-car-report-function)
+9. [Car Rent and Return Section](#car-rent-and-return-section)
+   - [Rent Car Function](#rent-car-function)
+   - [Return Car Function](#return-car-function)
+10. [Current Time Section](#current-time-section)
+   - [Time Function](#time-function)
+11. [Validation Functions Section](#validation-functions-section)
+   - [Validate Car Number Function](#validate-car-number-function)
+   - [Validate Phone Number Function](#validate-phone-number-function)
+   - [Validate CNIC Number Function](#validate-cnic-number-function)
+   - [Validate Num Function](#validate-num-function)
+12. [Beautiful Message Display Section](#beautiful-message-display-section)
+   - [Print Welcome Message Function](#print-welcome-message-function)
+   - [Print Congratulations Customer Function](#print-congratulations-customer-function)
+   - [Print Congratulations Admin Function](#print-congratulations-admin-function)
+
+## 1. Introduction<a name="introduction"></a>
+
+This document provides documentation for the Car Rental System code, outlining the structures, functions, and features of the system.
+
+## 2. Structures<a name="structures"></a>
+
+### Admin Data Structure<a name="admin-data-structure"></a>
+
+The `admindata` structure holds information about the admin, including admin ID, name, and password.
+
+```cpp
+struct admindata {
+   int adminID;
+   string adminName;
+   string adminPassword;
+};
+```
+
+### Car Data Structure<a name="car-data-structure"></a>
+
+The `cardata` structure represents information about a car, including car ID, name, model, number, condition, status, per day rental rate, and repair times.
+
+```cpp
+struct cardata {
+   int carid;
+   string carname;
+   string model;
+   string number;
+   string condition;
+   string status;
+   double perdayRate;
+   int carRepairTimes;
+   cardata();
+};
+```
+
+### Customer Data Structure<a name="customer-data-structure"></a>
+
+The `costumerdata` structure contains details about a customer, such as customer ID, name, address, phone number, CNIC, password, customer status, rented car ID, and total amount.
+
+```cpp
+struct costumerdata {
+   int cosid;
+   string name;
+   string address;
+   string phoneNum;
+   string CNIC;
+   int password;
+   string costumerstatus;
+   int rentedCarID;
+   double totalamount;
+   costumerdata();
+};
+```
+
+### Rental Report Structure<a name="rental-report-structure"></a>
+
+The `rentalReport` structure represents rental transaction details, including ID, password, rental days, car ID, price, rental time, return time, car name, model, and number.
+
+```cpp
+struct rentalReport {
+   int id;
+   int pass;
+   int days;
+   int carID;
+   double price;
+   string rentTime;
+   string ReturnTime;
+   string carName;
+   string carModel;
+   string carNumber;
+   rentalReport();
+};
+```
+
+### Customer Report Structure<a name="customer-report-structure"></a>
+
+The `costumerReport` structure holds information about customer transactions, including ID, password, date, rental days, and amount.
+
+```cpp
+struct costumerReport {
+   int id;
+   int password;
+   string Date;
+   int days;
+   double amount;
+   costumerReport();
+};
+```
+
+## 3. Data Reading Section<a name="data-reading-section"></a>
+
+### Number of Customers<a name="number-of-customers"></a>
+
+The `noOfcostumers` function reads the number of customers from a file.
+
+```cpp
+int* noOfcostumers();
+```
+
+### Number of Cars<a name="number-of-cars"></a>
+
+The `noOfCars` function reads the number of cars from a file.
+
+```cpp
+int* noOfCars();
+```
+
+### Car Data Pointer<a name="car-data-pointer"></a>
+
+The `carpointerdata` function reads car data from a file into an array.
+
+```cpp
+cardata* carpointerdata();
+```
+
+### Customer Data Pointer<a name="customer-data-pointer"></a>
+
+The `costumerpointer` function reads customer data from a file into an array.
+
+```cpp
+costumerdata* costumerpointer();
+```
+
+## 4. Exit Function<a name="exit-function"></a>
+
+The `exitfunction` function writes data back into files and ends the program.
+
+```cpp
+void exitfunction(const cardata car[], const int carsnumber, const costumerdata[], const int);
+```
+
+## 5. Admin Section<a name="admin-section"></a>
+
+### Admin Side Function<a name="admin-side-function"></a>
+
+The `adminSide` function handles the admin side of the system.
+
+```cpp
+void adminSide(cardata* carptr, int*, costumerdata* costumerptr, int*);
+```
+
+### Admin Options Function<a name="admin-options-function"></a>
+
+The `adminoptions` function presents various options for the admin to choose from.
+
+```cpp
+void adminoptions
+
+(cardata* carptr, int*, costumerdata* costumerptr, int*);
+```
+
+## 6. Car Section<a name="car-section"></a>
+
+### Add Car Function<a name="add-car-function"></a>
+
+The `addcar` function allows the admin to add a new car to the system.
+
+```cpp
+cardata* addcar(cardata*, int*);
+```
+
+### View Cars Function<a name="view-cars-function"></a>
+
+The `viewcars` function displays information about all available cars.
+
+```cpp
+void viewcars(cardata* carptr, int*);
+```
+
+### Search Car Data Function<a name="search-car-data-function"></a>
+
+The `searchCarData` function searches for a specific car based on user input.
+
+```cpp
+int searchCarData(cardata*, int*);
+```
+
+### Update Car Data Function<a name="update-car-data-function"></a>
+
+The `updateCarData` function allows the admin to update information about a specific car.
+
+```cpp
+void updateCarData(cardata*, int*);
+```
+
+### Delete Car Data Function<a name="delete-car-data-function"></a>
+
+The `deleteCarData` function enables the admin to remove a car from the system.
+
+```cpp
+cardata* deleteCarData(cardata*, int*);
+```
+
+### Print Car Function<a name="print-car-function"></a>
+
+The `printCar` function displays details about a specific car.
+
+```cpp
+void printCar(cardata s);
+```
+
+## 7. Customer Section<a name="customer-section"></a>
+
+### Customer Side Function<a name="customer-side-function"></a>
+
+The `costumerSide` function handles the customer side of the system.
+
+```cpp
+void costumerSide(cardata* car, int* carnumbers, costumerdata* costumer, int* costumernumber);
+```
+
+### Customer Options Function<a name="customer-options-function"></a>
+
+The `costumerOptions` function presents various options for the customer to choose from.
+
+```cpp
+void costumerOptions(cardata* car, int* carnumbers, costumerdata* costumer, int* costumernumber, int id);
+```
+
+### Add Customer Function<a name="add-customer-function"></a>
+
+The `addCostumer` function allows the admin to add a new customer to the system.
+
+```cpp
+costumerdata* addCostumer(costumerdata*, int*);
+```
+
+### View Customer Function<a name="view-customer-function"></a>
+
+The `viewcostumer` function displays information about all customers.
+
+```cpp
+void viewcostumer(costumerdata*, int*);
+```
+
+### Print Customer Function<a name="print-customer-function"></a>
+
+The `printCostumer` function displays details about a specific customer.
+
+```cpp
+void printCostumer(costumerdata);
+```
+
+### Update Customer Data Function<a name="update-customer-data-function"></a>
+
+The `updateCostumerData` function allows the admin to update information about a specific customer.
+
+```cpp
+void updateCostumerData(costumerdata*, int*);
+```
+
+### Delete Customer Data Function<a name="delete-customer-data-function"></a>
+
+The `deleteCostumerData` function enables the admin to remove a customer from the system.
+
+```cpp
+costumerdata* deleteCostumerData(costumerdata*, int*);
+```
+
+### Search Customer Function<a name="search-customer-function"></a>
+
+The `searchCostumer` function searches for a specific customer based on user input.
+
+```cpp
+int searchCostumer(costumerdata*, int*);
+```
+
+### Change Admin Password Function<a name="change-admin-password-function"></a>
+
+The `changeadminpass` function allows the admin to change their password.
+
+```cpp
+void changeadminpass();
+```
+
+## 8. Print Report Section<a name="print-report-section"></a>
+
+### Print Rental Report Function<a name="print-rental-report-function"></a>
+
+The `printRenalReport` function generates and prints a rental report.
+
+```cpp
+void printRenalReport(cardata* car, int* carnumbers, costumerdata* costumer, int* costumernumber, int& id);
+```
+
+### Print Car Report Function<a name="print-car-report-function"></a>
+
+The `PrintcarReport` function generates and prints a car report.
+
+```cpp
+void PrintcarReport(cardata* car, int* carsnumber);
+```
+
+## 9. Car Rent and Return Section<a name="car-rent-and-return-section"></a>
+
+### Rent Car Function<a name="rent-car-function"></a>
+
+The `rentCar` function facilitates the process of renting a car.
+
+```cpp
+cardata* rentCar(cardata* car, int* carnumbers, costumerdata* costumer, int* costumernumber, int& id);
+```
+
+### Return Car Function<a name="return-car-function"></a>
+
+The `returnCar` function manages the return of a rented car.
+
+```cpp
+cardata* returnCar(cardata* car, int* carnumbers, costumerdata* costumer, int* costumernumber, int& id);
+```
+
+## 10. Current Time Section<a name="current-time-section"></a>
+
+### Time Function<a name="time-function"></a>
+
+The `timefunction` function returns the current system time.
+
+```cpp
+string timefunction();
+```
+
+## 11. Validation Functions Section<a name="validation-functions-section"></a>
+
+### Validate Car Number Function<a name="validate-car-number-function"></a>
+
+The `validateCarNumber` function checks the validity of a car number.
+
+```cpp
+bool validateCarNumber(const string& carNumber);
+```
+
+### Validate Phone Number Function<a name="validate-phone-number-function"></a>
+
+The `validatePhoneNumber` function checks the validity of a phone number.
+
+```cpp
+bool validatePhoneNumber(const string& phoneNumber);
+```
+
+### Validate CNIC Number Function<a name="validate-cnic-number-function"></a>
+
+The `validateCNICNumber` function checks the validity of a CNIC number.
+
+```cpp
+bool validateCNICNumber(const string& CNICNumber);
+```
+
+### Validate Num Function<a name="validate-num-function"></a>
+
+The `validateNum` function validates a numeric input.
+
+```cpp
+void validateNum(int& num);
+```
+
+## 12. Beautiful Message Display Section<a name="beautiful-message-display-section"></a>
+
+### Print Welcome Message Function<a name="print-welcome-message-function"></a>
+
+The `printWelcomeMessage` function displays a welcome message.
+
+```cpp
+void printWelcomeMessage();
+```
+
+### Print Congratulations Customer Function<a name="print-congratulations-customer-function"></a>
+
+The `printCongratulationsCustomer` function displays a congratulatory message to the customer.
+
+```cpp
+void printCongratulationsCustomer();
+```
+
+### Print Congratulations Admin Function<a name="print-congratulations-admin-function"></a>
+
+The `printCongratulationsAdmin` function displays a congratulatory message to the admin.
+
+```cpp
+void printCongratulationsAdmin();
+```
+
+This documentation provides a comprehensive overview of the Car Rental System code, including its structures, functions, and features. Users can refer to specific sections based on their interests or requirements.

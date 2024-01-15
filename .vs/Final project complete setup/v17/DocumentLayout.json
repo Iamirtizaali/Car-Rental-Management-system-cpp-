@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\programming\\SE PF Semester 1 Data\\Final project complete setup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{13F79809-A70F-4A53-9498-F4DE7E316F96}|Final project complete setup.vcxproj|D:\\programming\\SE PF Semester 1 Data\\Final project complete setup\\Final project complete setup.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13F79809-A70F-4A53-9498-F4DE7E316F96}|Final project complete setup.vcxproj|solutionrelative:Final project complete setup.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Final project complete setup.cpp",
+              "DocumentMoniker": "D:\\programming\\SE PF Semester 1 Data\\Final project complete setup\\Final project complete setup.cpp",
+              "RelativeDocumentMoniker": "Final project complete setup.cpp",
+              "ToolTip": "D:\\programming\\SE PF Semester 1 Data\\Final project complete setup\\Final project complete setup.cpp",
+              "RelativeToolTip": "Final project complete setup.cpp",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2023-12-17T10:31:46.384Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
